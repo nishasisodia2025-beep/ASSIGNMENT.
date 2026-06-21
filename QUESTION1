@@ -1,8 +1,8 @@
-def print_half_pyramid(rows):
-    for i in range(1, rows + 1):
-        # Print i stars on each line
+def print_reverse_star(rows):
+    # Loop backwards from rows down to 1
+    for i in range(rows, 0, -1):
         print("*" * i)
 
 # Test the program
 num_rows = int(input("Enter number of rows: "))
-print_half_pyramid(num_rows)
+print_reverse_star(num_rows)
