@@ -1,32 +1,25 @@
-#include<stdio.h>
-int main()
-{
-    int low,high,i,j,isPrime;
-    printf("Enter the lower and upper limits: ");
-    scanf("%d %d",&low,&high);
-    printf("Prime numbers between %d and %d are: ",low,high);
-    for(i=low; i<=high; i++)
-    {
-        if(i <= 1)
-        {
-            continue; // Skip 0 and 1
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int t1 = 0, t2 = 1, nthTerm = 0;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    if (n == 1) {
+        nthTerm = t1;
+    } else if (n == 2) {
+        nthTerm = t2;
+    } else {
+        for (i = 3; i <= n; i++) {
+            nthTerm = t1 + t2;
+            t1 = t2;
+            t2 = nthTerm;
         }
-        isPrime = 1; // Assume i is prime until proven otherwise
-        for(j=2; j*j <= i; j++)
-        {
-            if(i % j == 0)
-            {
-                isPrime = 0; // Found a divisor, not a prime number 
-                break;
-                }
-            }
-        }
-        if (isPrime==1)
-        {
-            printf("%d",i);
-            }
-        }
-        printf("\n");
-        return 0;
     }
-            
+
+    printf("The %d-th Fibonacci term is: %d\n", n, nthTerm);
+
+    return 0;
+}
