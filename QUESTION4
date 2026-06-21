@@ -1,27 +1,14 @@
-#include <stdio.h>
+def find_factorial(n):
+    if n < 0:
+        return "Factorial does not exist for negative numbers"
+    elif n == 0 or n == 1:
+        return 1
+    else:
+        fact = 1
+        for i in range(2, n + 1):
+            fact *= i
+        return fact
 
-int main() {
-    int rows = 5;
-
-    for (int i = 1; i <= rows; i++) {
-        // Loop to print leading spaces
-        for (int j = 1; j <= rows - i; j++) {
-            printf(" ");
-        }
-        
-        // Loop to print increasing characters
-        for (int j = 1; j <= i; j++) {
-            printf("%c", 'A' + j - 1);
-        }
-        
-        // Loop to print decreasing characters
-        for (int j = i - 1; j >= 1; j--) {
-            printf("%c", 'A' + j - 1);
-        }
-        
-        // Move to the next line
-        printf("\n");
-    }
-
-    return 0;
-}
+# Example usage:
+num = 5
+print(f"Factorial of {num} is:", find_factorial(num))

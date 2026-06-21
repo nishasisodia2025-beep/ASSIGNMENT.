@@ -1,27 +1,14 @@
-#include <stdio.h>
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
-int main() {
-    int rows = 5;
-
-    for (int i = 1; i <= rows; i++) {
-        // Loop to print leading spaces
-        for (int j = 1; j <= rows - i; j++) {
-            printf(" ");
-        }
-        
-        // Loop to print increasing numbers
-        for (int j = 1; j <= i; j++) {
-            printf("%d", j);
-        }
-        
-        // Loop to print decreasing numbers
-        for (int j = i - 1; j >= 1; j--) {
-            printf("%d", j);
-        }
-        
-        // Move to the next line
-        printf("\n");
-    }
-
-    return 0;
-}
+# Example usage:
+number = 17
+if is_prime(number):
+    print(f"{number} is a prime number.")
+else:
+    print(f"{number} is not a prime number.")
