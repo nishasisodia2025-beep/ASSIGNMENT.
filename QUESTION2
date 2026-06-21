@@ -1,10 +1,5 @@
-def find_maximum(a, b):
-    if a > b:
-        return a
-    else:
-        return b
-
-# Example usage:
-num1 = 12
-num2 = 25
-print("Maximum:", find_maximum(num1, num2))
+def is_armstrong(num):
+    num_str = str(num)
+    n = len(num_str)
+    total = sum(int(digit) ** n for digit in num_str)
+    return total == num
