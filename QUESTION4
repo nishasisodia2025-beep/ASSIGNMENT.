@@ -1,14 +1,8 @@
-def recursive_reverse(n, current_rev=0):
-    # Base case
-    if n == 0:
-        return current_rev
-    # Recursive case: shift current reversal and add the last digit
-    return recursive_reverse(n // 10, current_rev * 10 + (n % 10))
+def print_repeated_number_triangle(rows):
+    for i in range(1, rows + 1):
+        # Convert the row number to a string and repeat it i times
+        print(str(i) * i)
 
 # Test the program
-num = int(input("Enter an integer: "))
-# Handle zero and negative signs manually if needed
-sign = -1 if num < 0 else 1
-reversed_num = sign * recursive_reverse(abs(num))
-
-print(f"Reversed number: {reversed_num}")
+num_rows = int(input("Enter number of rows: "))
+print_repeated_number_triangle(num_rows)
