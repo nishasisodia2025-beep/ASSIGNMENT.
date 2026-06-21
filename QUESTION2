@@ -1,19 +1,14 @@
-import math
-
-def is_strong_number(n):
-    temp = n
-    digit_sum = 0
+def binary_to_decimal(binary_str):
+    decimal_val = 0
+    power = 0
     
-    while temp > 0:
-        digit = temp % 10
-        digit_sum += math.factorial(digit)
-        temp //= 10
-        
-    return digit_sum == n
+    # Iterate through the string from right to left
+    for digit in reversed(binary_str):
+        if digit == '1':
+            decimal_val += 2 ** power
+        power += 1
+    return decimal_val
 
 # Test the program
-num = int(input("Enter a number: "))
-if is_strong_number(num):
-    print(f"{num} is a Strong Number.")
-else:
-    print(f"{num} is NOT a Strong Number.")
+b_str = input("Enter a binary number: ")
+print(f"Decimal value: {binary_to_decimal(b_str)}")

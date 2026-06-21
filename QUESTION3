@@ -1,11 +1,11 @@
-def print_factors(n):
-    print(f"The factors of {n} are:")
-    # Loop from 1 to n to check for divisors
-    for i in range(1, n + 1):
-        if n % i == 0:
-            print(i, end=" ")
-    print()  # For new line
+def count_set_bits(n):
+    count = 0
+    while n > 0:
+        # Brian Kernighan’s Algorithm to clear the lowest set bit
+        n = n & (n - 1)
+        count += 1
+    return count
 
 # Test the program
-num = int(input("Enter a number: "))
-print_factors(num)
+num = int(input("Enter an integer: "))
+print(f"Number of set bits: {count_set_bits(num)}")
