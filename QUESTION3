@@ -1,14 +1,23 @@
 #include<stdio.h>
 int main()
 {
-    int n;
-    long long factorial=1;
-    printf("Enter a number:");    
-    scanf("%d",&n);
-    for(int i=1;i<=n;i++)
+    int num, remainder, product = 1;
+    printf("Enter a number: ");    
+    scanf("%d", &num);
+    if(num == 0)
     {
-        factorial*=i;
+        product = 0;
     }
-    printf("Factorial of %d is %lld",n,factorial);
-    return 0;
+    if(num < 0)
+    {
+        num = -num; // Make the number positive for digit extraction
+    }
+    while(num != 0)
+    {
+        remainder = num % 10;
+        product *= remainder;
+        num /= 10;
+    }
+    printf("Product of digits is %d", product);
+    return 0;   
 }

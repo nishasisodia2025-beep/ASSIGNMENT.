@@ -1,13 +1,15 @@
 #include<stdio.h>
 int main()
 {
-    int n,sum=0;
-    printf("Enter the number of terms:");
-    scanf("%d",&n);
-    for(int i=1;i<=n;i++)
+    int num, remainder, sum = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    while(num != 0)
     {
-        sum+=i;
+        remainder = num % 10;
+        sum += remainder * remainder;
+        num /= 10;
     }
-    printf("Sum of first %d natural numbers is %d",n,sum);
-    return 0;      
+    printf("Sum of squares of digits is %d", sum);
+    return 0;
 }
