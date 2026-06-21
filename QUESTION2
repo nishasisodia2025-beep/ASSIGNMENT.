@@ -1,25 +1,19 @@
-#include <stdio.h>
+import math
 
-int main() {
-    int n, i;
-    int t1 = 0, t2 = 1, nthTerm = 0;
+def is_strong_number(n):
+    temp = n
+    digit_sum = 0
+    
+    while temp > 0:
+        digit = temp % 10
+        digit_sum += math.factorial(digit)
+        temp //= 10
+        
+    return digit_sum == n
 
-    printf("Enter the value of n: ");
-    scanf("%d", &n);
-
-    if (n == 1) {
-        nthTerm = t1;
-    } else if (n == 2) {
-        nthTerm = t2;
-    } else {
-        for (i = 3; i <= n; i++) {
-            nthTerm = t1 + t2;
-            t1 = t2;
-            t2 = nthTerm;
-        }
-    }
-
-    printf("The %d-th Fibonacci term is: %d\n", n, nthTerm);
-
-    return 0;
-}
+# Test the program
+num = int(input("Enter a number: "))
+if is_strong_number(num):
+    print(f"{num} is a Strong Number.")
+else:
+    print(f"{num} is NOT a Strong Number.")

@@ -1,40 +1,25 @@
-#include <stdio.h>
-#include <math.h>
+def largest_prime_factor(n):
+    largest = -1
+    
+    # Divide out all the 2s
+    while n % 2 == 0:
+        largest = 2
+        n //= 2
+        
+    # Check odd numbers starting from 3 up to sqrt(n)
+    for i in range(3, int(math.sqrt(n)) + 1, 2):
+        while n % i == 0:
+            largest = i
+            n //= i
+            
+    # If n is still greater than 2, then n itself is prime
+    if n > 2:
+        largest = n
+        
+    return largest
 
-int main() {
-    int low, high, i, temp1, temp2, remainder, n;
-    double result;
-
-    printf("Enter lower bound and upper bound: ");
-    scanf("%d %d", &low, &high);
-
-    printf("Armstrong numbers between %d and %d are: \n", low, high);
-
-    for (i = low; i <= high; ++i) {
-        temp2 = i;
-        temp1 = i;
-        n = 0;
-        result = 0.0;
-
-        // Count digits for the current number
-        while (temp1 != 0) {
-            temp1 /= 10;
-            ++n;
-        }
-
-        // Calculate power sum
-        while (temp2 != 0) {
-            remainder = temp2 % 10;
-            result += pow(remainder, n);
-            temp2 /= 10;
-        }
-
-        // Print if it matches
-        if ((int)result == i) {
-            printf("%d ", i);
-        }
-    }
-    printf("\n");
-
-    return 0;
-}
+# Test the program
+import math
+num = int(input("Enter a number: "))
+result = largest_prime_factor(num)
+print(f"The largest prime factor of {num} is {result}.")
