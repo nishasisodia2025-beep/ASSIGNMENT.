@@ -1,23 +1,22 @@
-#include<stdio.h>
-int main()
-{
-    int num, remainder, product = 1;
-    printf("Enter a number: ");    
-    scanf("%d", &num);
-    if(num == 0)
-    {
-        product = 0;
+#include <stdio.h>
+
+int main() {
+    int n1, n2, originalN1, originalN2, temp;
+
+    printf("Enter two integers: ");
+    scanf("%d %d", &n1, &n2);
+
+    originalN1 = n1;
+    originalN2 = n2;
+
+    // Euclidean Algorithm to find GCD efficiently
+    while (n2 != 0) {
+        temp = n2;
+        n2 = n1 % n2;
+        n1 = temp;
     }
-    if(num < 0)
-    {
-        num = -num; // Make the number positive for digit extraction
-    }
-    while(num != 0)
-    {
-        remainder = num % 10;
-        product *= remainder;
-        num /= 10;
-    }
-    printf("Product of digits is %d", product);
-    return 0;   
+
+    printf("GCD of %d and %d = %d\n", originalN1, originalN2, n1);
+
+    return 0;
 }

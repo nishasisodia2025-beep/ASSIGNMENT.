@@ -1,15 +1,32 @@
 #include<stdio.h>
 int main()
 {
-    int num,remainder,reverse=0;
-    printf("Enter a number: ");
-    scanf("%d", &num);
-    while(num != 0)
+    int low,high,i,j,isPrime;
+    printf("Enter the lower and upper limits: ");
+    scanf("%d %d",&low,&high);
+    printf("Prime numbers between %d and %d are: ",low,high);
+    for(i=low; i<=high; i++)
     {
-        remainder = num % 10;
-        reverse = reverse * 10 + remainder;
-        num /= 10;
+        if(i <= 1)
+        {
+            continue; // Skip 0 and 1
+        }
+        isPrime = 1; // Assume i is prime until proven otherwise
+        for(j=2; j*j <= i; j++)
+        {
+            if(i % j == 0)
+            {
+                isPrime = 0; // Found a divisor, not a prime number 
+                break;
+                }
+            }
+        }
+        if (isPrime==1)
+        {
+            printf("%d",i);
+            }
+        }
+        printf("\n");
+        return 0;
     }
-    printf("Reverse of the number is %d", reverse);
-    return 0;
-}
+            
