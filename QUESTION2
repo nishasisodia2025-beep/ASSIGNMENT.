@@ -1,14 +1,12 @@
-def binary_to_decimal(binary_str):
-    decimal_val = 0
-    power = 0
-    
-    # Iterate through the string from right to left
-    for digit in reversed(binary_str):
-        if digit == '1':
-            decimal_val += 2 ** power
-        power += 1
-    return decimal_val
+def recursive_fibonacci(n):
+    # Base cases
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    # Recursive case
+    return recursive_fibonacci(n - 1) + recursive_fibonacci(n - 2)
 
 # Test the program
-b_str = input("Enter a binary number: ")
-print(f"Decimal value: {binary_to_decimal(b_str)}")
+num = int(input("Enter the position (n): "))
+print(f"The Fibonacci number at position {num} is {recursive_fibonacci(num)}")

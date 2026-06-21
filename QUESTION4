@@ -1,22 +1,14 @@
-def power(x, n):
-    # Handle negative exponents
-    if n < 0:
-        x = 1 / x
-        n = -n
-        
-    result = 1
-    current_product = x
-    
-    while n > 0:
-        # If n is odd, multiply result with current_product
-        if n % 2 == 1:
-            result *= current_product
-        current_product *= current_product
-        n //= 2
-        
-    return result
+def recursive_reverse(n, current_rev=0):
+    # Base case
+    if n == 0:
+        return current_rev
+    # Recursive case: shift current reversal and add the last digit
+    return recursive_reverse(n // 10, current_rev * 10 + (n % 10))
 
 # Test the program
-base = float(input("Enter base (x): "))
-exponent = int(input("Enter exponent (n): "))
-print(f"{base}^{exponent} = {power(base, exponent)}")
+num = int(input("Enter an integer: "))
+# Handle zero and negative signs manually if needed
+sign = -1 if num < 0 else 1
+reversed_num = sign * recursive_reverse(abs(num))
+
+print(f"Reversed number: {reversed_num}")

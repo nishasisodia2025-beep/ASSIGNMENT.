@@ -1,14 +1,13 @@
-def decimal_to_binary(n):
-    if n == 0:
-        return "0"
-    
-    binary_str = ""
-    while n > 0:
-        remainder = n % 2
-        binary_str = str(remainder) + binary_str
-        n //= 2
-    return binary_str
+def recursive_factorial(n):
+    # Base cases
+    if n == 0 or n == 1:
+        return 1
+    # Recursive case
+    return n * recursive_factorial(n - 1)
 
 # Test the program
-num = int(input("Enter a decimal number: "))
-print(f"Binary representation: {decimal_to_binary(num)}")
+num = int(input("Enter a positive integer: "))
+if num < 0:
+    print("Factorial is not defined for negative numbers.")
+else:
+    print(f"Factorial of {num} is {recursive_factorial(num)}")

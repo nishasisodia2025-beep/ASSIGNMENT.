@@ -1,11 +1,12 @@
-def count_set_bits(n):
-    count = 0
-    while n > 0:
-        # Brian Kernighan’s Algorithm to clear the lowest set bit
-        n = n & (n - 1)
-        count += 1
-    return count
+def recursive_sum_of_digits(n):
+    # Handle negative numbers
+    n = abs(n)
+    # Base case: if single digit left
+    if n == 0:
+        return 0
+    # Recursive case: last digit + sum of remaining digits
+    return (n % 10) + recursive_sum_of_digits(n // 10)
 
 # Test the program
 num = int(input("Enter an integer: "))
-print(f"Number of set bits: {count_set_bits(num)}")
+print(f"The sum of the digits is {recursive_sum_of_digits(num)}")
