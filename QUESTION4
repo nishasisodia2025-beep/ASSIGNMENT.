@@ -1,5 +1,4 @@
-def is_perfect(num):
-    if num <= 1:
-        return False
-    divisors_sum = sum(i for i in range(1, num) if num % i == 0)
-    return divisors_sum == num
+def count_even_odd(arr):
+    even_count = sum(1 for x in arr if x % 2 == 0)
+    odd_count = len(arr) - even_count
+    return even_count, odd_count

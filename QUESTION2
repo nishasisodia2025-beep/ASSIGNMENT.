@@ -1,5 +1,6 @@
-def is_armstrong(num):
-    num_str = str(num)
-    n = len(num_str)
-    total = sum(int(digit) ** n for digit in num_str)
-    return total == num
+def find_sum_and_average(arr):
+    if not arr:
+        return 0, 0.0
+    total_sum = sum(arr)
+    average = total_sum / len(arr)
+    return total_sum, average

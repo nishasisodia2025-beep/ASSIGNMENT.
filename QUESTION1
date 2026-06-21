@@ -1,3 +1,11 @@
-def is_palindrome(value):
-    s = str(value)
-    return s == s[::-1]
+def input_and_display_array():
+    n = int(input("Enter number of elements: "))
+    arr = []
+    for i in range(n):
+        element = int(input(f"Enter element {i+1}: "))
+        arr.append(element)
+    
+    print("The array elements are:", arr)
+
+# To run, uncomment the line below:
+# input_and_display_array()
