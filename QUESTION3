@@ -1,15 +1,10 @@
-def reverse_sub段(arr, start, end):
-    while start < end:
-        arr[start], arr[end] = arr[end], arr[start]
-        start += 1
-        end -= 1
-
-def rotate_right(arr, k):
-    n = len(arr)
-    if n == 0: return arr
-    k = k % n
+def find_pair_with_sum(arr, target_sum):
+    seen_numbers = set()
     
-    reverse_sub段(arr, 0, n - 1)  # Reverse the entire array
-    reverse_sub段(arr, 0, k - 1)  # Reverse first k elements
-    reverse_sub段(arr, k, n - 1)  # Reverse remaining elements
-    return arr
+    for num in arr:
+        complement = target_sum - num
+        if complement in seen_numbers:
+            return (complement, num)  # Pair found
+        seen_numbers.add(num)
+        
+    return None  # No pair found

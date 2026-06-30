@@ -1,15 +1,15 @@
-def reverse_sub段(arr, start, end):
-    while start < end:
-        arr[start], arr[end] = arr[end], arr[start]
-        start += 1
-        end -= 1
-
-def rotate_left(arr, k):
-    n = len(arr)
-    if n == 0: return arr
-    k = k % n  # Handle cases where k is greater than array length
+def max_frequency_element(arr):
+    if not arr:
+        return None
+        
+    frequency_map = {}
+    max_count = 0
+    most_frequent_item = arr[0]
     
-    reverse_sub段(arr, 0, k - 1)  # Reverse first k elements
-    reverse_sub段(arr, k, n - 1)  # Reverse remaining elements
-    reverse_sub段(arr, 0, n - 1)  # Reverse the entire array
-    return arr
+    for num in arr:
+        frequency_map[num] = frequency_map.get(num, 0) + 1
+        if frequency_map[num] > max_count:
+            max_count = frequency_map[num]
+            most_frequent_item = num
+            
+    return most_frequent_item

@@ -1,15 +1,10 @@
-def move_zeroes(arr):
-    non_zero_pos = 0
+def remove_duplicates(arr):
+    seen = set()
+    unique_arr = []
     
-    # Move all non-zero elements forward
-    for i in range(len(arr)):
-        if arr[i] != 0:
-            arr[non_zero_pos] = arr[i]
-            non_zero_pos += 1
+    for num in arr:
+        if num not in seen:
+            seen.add(num)
+            unique_arr.append(num)
             
-    # Fill the rest of the array with zeroes
-    while non_zero_pos < len(arr):
-        arr[non_zero_pos] = 0
-        non_zero_pos += 1
-        
-    return arr
+    return unique_arr

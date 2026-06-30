@@ -1,10 +1,8 @@
-def reverse_array(arr):
-    left = 0
-    right = len(arr) - 1
+def find_missing_number(arr, n):
+    # Expected sum of first n natural numbers
+    expected_sum = (n * (n + 1)) // 2
     
-    while left < right:
-        # Swap elements
-        arr[left], arr[right] = arr[right], arr[left]
-        left += 1
-        right -= 1
-    return arr
+    # Actual sum of elements present in the array
+    actual_sum = sum(arr)
+    
+    return expected_sum - actual_sum
