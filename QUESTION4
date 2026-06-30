@@ -1,4 +1,18 @@
-def sort_descending(arr):
-    # Sorts the original array sequence downwards in place
-    arr.sort(reverse=True)
-    return arr
+def diagonal_sum(matrix):
+    n = len(matrix)
+    total_sum = 0
+    
+    # Loop through the rows and add the element where row index equals column index
+    for i in range(n):
+        total_sum += matrix[i][i]
+        
+    return total_sum
+
+# --- Example Usage ---
+# Must be a square matrix (3x3)
+square_matrix = [,
+ ,
+    [7, 8, 9]
+]
+
+print("Sum of the main diagonal:", diagonal_sum(square_matrix))
