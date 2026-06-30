@@ -1,23 +1,10 @@
-def multiply_matrices(A, B):
-    # A is (m x n), B is (n x p)
-    m, n, p = len(A), len(A[0]), len(B[0])
-    
-    # Initialize result matrix with dimensions (m x p)
-    result = [[0 for _ in range(p)] for _ in range(m)]
-    
-    # Perform standard matrix dot product
-    for i in range(m):
-        for j in range(p):
-            for k in range(n):
-                result[i][j] += A[i][k] * B[k][j]
-                
-    return result
+def find_length(string):
+    count = 0
+    # Loop through every character to increment the counter
+    for char in string:
+        count += 1
+    return count
 
 # --- Example Usage ---
-matrix_A = [[1, 2], [3, 4]]  # 2x2 Matrix
-matrix_B = [[5, 6], [7, 8]]  # 2x2 Matrix
-
-product = multiply_matrices(matrix_A, matrix_B)
-print("Product of Matrices:")
-for row in product:
-    print(row)
+text = "Microsoft"
+print(f"Length of '{text}':", find_length(text))

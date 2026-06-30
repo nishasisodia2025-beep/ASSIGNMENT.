@@ -1,13 +1,14 @@
-def row_wise_sum(matrix):
-    # Sum up each list component inside the matrix
-    return [sum(row) for row in matrix]
+def to_uppercase(string):
+    result = ""
+    for char in string:
+        # Check if character is between 'a' and 'z'
+        if 'a' <= char <= 'z':
+            # Convert by shifting ASCII value by 32
+            result += chr(ord(char) - 32)
+        else:
+            result += char
+    return result
 
 # --- Example Usage ---
-matrix = [,
- ,
-    [7, 8, 9]
-]
-
-sums = row_wise_sum(matrix)
-for i, r_sum in enumerate(sums):
-    print(f"Sum of Row {i+1}: {r_sum}")
+text = "wipro"
+print(f"Uppercase of '{text}':", to_uppercase(text))

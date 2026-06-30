@@ -1,18 +1,10 @@
-def is_symmetric(matrix):
-    n = len(matrix)
-    
-    # Check if elements mirror perfectly across the main diagonal
-    for i in range(n):
-        for j in range(i):
-            if matrix[i][j] != matrix[j][i]:
-                return False
-                
-    return True
+def reverse_string(string):
+    reversed_text = ""
+    # Loop backward from index length-1 down to 0
+    for i in range(len(string) - 1, -1, -1):
+        reversed_text += string[i]
+    return reversed_text
 
 # --- Example Usage ---
-symmetric_matrix = [,
- ,
-    [3, 5, 6]
-]
-
-print("Is symmetric?", is_symmetric(symmetric_matrix))
+text = "Adobe"
+print(f"Reversed '{text}':", reverse_string(text))
