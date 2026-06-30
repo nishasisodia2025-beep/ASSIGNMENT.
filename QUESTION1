@@ -1,8 +1,17 @@
-def find_missing_number(arr, n):
-    # Expected sum of first n natural numbers
-    expected_sum = (n * (n + 1)) // 2
+def merge_sorted_arrays(arr1, arr2):
+    i, j = 0, 0
+    merged = []
     
-    # Actual sum of elements present in the array
-    actual_sum = sum(arr)
-    
-    return expected_sum - actual_sum
+    # Compare elements from both arrays step by step
+    while i < len(arr1) and j < len(arr2):
+        if arr1[i] < arr2[j]:
+            merged.append(arr1[i])
+            i += 1
+        else:
+            merged.append(arr2[j])
+            j += 1
+            
+    # Append any remaining elements
+    merged.extend(arr1[i:])
+    merged.extend(arr2[j:])
+    return merged

@@ -1,10 +1,2 @@
-def find_pair_with_sum(arr, target_sum):
-    seen_numbers = set()
-    
-    for num in arr:
-        complement = target_sum - num
-        if complement in seen_numbers:
-            return (complement, num)  # Pair found
-        seen_numbers.add(num)
-        
-    return None  # No pair found
+def array_intersection(arr1, arr2):
+    return list(set(arr1) & set(arr2))

@@ -1,10 +1,4 @@
-def remove_duplicates(arr):
-    seen = set()
-    unique_arr = []
-    
-    for num in arr:
-        if num not in seen:
-            seen.add(num)
-            unique_arr.append(num)
-            
-    return unique_arr
+def find_common_elements(arr1, arr2):
+    set1 = set(arr1)
+    # Extract matches preserving duplicates from the second array if desired
+    return [item for item in arr2 if item in set1]
