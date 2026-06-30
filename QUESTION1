@@ -1,11 +1,9 @@
-def input_and_display_array():
-    n = int(input("Enter number of elements: "))
-    arr = []
-    for i in range(n):
-        element = int(input(f"Enter element {i+1}: "))
-        arr.append(element)
-    
-    print("The array elements are:", arr)
-
-# To run, uncomment the line below:
-# input_and_display_array()
+def linear_search(arr, target):
+    """
+    Searches for a target element in the array.
+    Returns the index if found, otherwise returns -1.
+    """
+    for index in range(len(arr)):
+        if arr[index] == target:
+            return index  # Target found, return its position
+    return -1  # Target not found

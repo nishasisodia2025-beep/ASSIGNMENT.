@@ -1,6 +1,6 @@
-def find_sum_and_average(arr):
-    if not arr:
-        return 0, 0.0
-    total_sum = sum(arr)
-    average = total_sum / len(arr)
-    return total_sum, average
+def find_frequency(arr, target):
+    count = 0
+    for element in arr:
+        if element == target:
+            count += 1
+    return count

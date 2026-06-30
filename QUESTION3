@@ -1,4 +1,14 @@
-def find_min_max(arr):
-    if not arr:
-        return None, None
-    return min(arr), max(arr)
+def get_second_largest(arr):
+    if len(arr) < 2:
+        return None
+    
+    first = second = float('-inf')
+    
+    for num in arr:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+            
+    return second if second != float('-inf') else None
