@@ -1,4 +1,4 @@
-def find_common_elements(arr1, arr2):
-    set1 = set(arr1)
-    # Extract matches preserving duplicates from the second array if desired
-    return [item for item in arr2 if item in set1]
+def sort_descending(arr):
+    # Sorts the original array sequence downwards in place
+    arr.sort(reverse=True)
+    return arr
