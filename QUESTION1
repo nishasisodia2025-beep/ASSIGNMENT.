@@ -1,9 +1,10 @@
-def linear_search(arr, target):
-    """
-    Searches for a target element in the array.
-    Returns the index if found, otherwise returns -1.
-    """
-    for index in range(len(arr)):
-        if arr[index] == target:
-            return index  # Target found, return its position
-    return -1  # Target not found
+def reverse_array(arr):
+    left = 0
+    right = len(arr) - 1
+    
+    while left < right:
+        # Swap elements
+        arr[left], arr[right] = arr[right], arr[left]
+        left += 1
+        right -= 1
+    return arr
