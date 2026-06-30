@@ -1,22 +1,18 @@
-def subtract_matrices(matrixA, matrixB):
-    rows = len(matrixA)
-    cols = len(matrixA[0])
+def is_symmetric(matrix):
+    n = len(matrix)
     
-    # Initialize a result matrix with zeros
-    result = [[0 for _ in range(cols)] for _ in range(rows)]
-    
-    # Subtract corresponding elements
-    for i in range(rows):
-        for j in range(cols):
-            result[i][j] = matrixA[i][j] - matrixB[i][j]
-            
-    return result
+    # Check if elements mirror perfectly across the main diagonal
+    for i in range(n):
+        for j in range(i):
+            if matrix[i][j] != matrix[j][i]:
+                return False
+                
+    return True
 
 # --- Example Usage ---
-A = [[12, 7], [5, 6]]
-B = [[5, 3], [1, 4]]
+symmetric_matrix = [,
+ ,
+    [3, 5, 6]
+]
 
-result = subtract_matrices(A, B)
-print("Result of Subtraction:")
-for row in result:
-    print(row)
+print("Is symmetric?", is_symmetric(symmetric_matrix))

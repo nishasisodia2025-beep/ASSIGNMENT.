@@ -1,18 +1,13 @@
-def diagonal_sum(matrix):
-    n = len(matrix)
-    total_sum = 0
-    
-    # Loop through the rows and add the element where row index equals column index
-    for i in range(n):
-        total_sum += matrix[i][i]
-        
-    return total_sum
+def row_wise_sum(matrix):
+    # Sum up each list component inside the matrix
+    return [sum(row) for row in matrix]
 
 # --- Example Usage ---
-# Must be a square matrix (3x3)
-square_matrix = [,
+matrix = [,
  ,
     [7, 8, 9]
 ]
 
-print("Sum of the main diagonal:", diagonal_sum(square_matrix))
+sums = row_wise_sum(matrix)
+for i, r_sum in enumerate(sums):
+    print(f"Sum of Row {i+1}: {r_sum}")
