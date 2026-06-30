@@ -1,10 +1,8 @@
-def reverse_string(string):
-    reversed_text = ""
-    # Loop backward from index length-1 down to 0
-    for i in range(len(string) - 1, -1, -1):
-        reversed_text += string[i]
-    return reversed_text
+def count_words(sentence):
+    # split() handles multiple consecutive spaces automatically
+    words = sentence.split()
+    return len(words)
 
 # --- Example Usage ---
-text = "Adobe"
-print(f"Reversed '{text}':", reverse_string(text))
+sentence = "TCS Infosys Wipro interview questions"
+print("Word count:", count_words(sentence))

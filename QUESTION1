@@ -1,10 +1,10 @@
-def find_length(string):
-    count = 0
-    # Loop through every character to increment the counter
-    for char in string:
-        count += 1
-    return count
+def is_palindrome(string):
+    # Normalize by converting to lowercase
+    clean_str = string.lower()
+    
+    # Check if the string matches its reverse
+    return clean_str == clean_str[::-1]
 
 # --- Example Usage ---
-text = "Microsoft"
-print(f"Length of '{text}':", find_length(text))
+text = "Radar"
+print(f"Is '{text}' a palindrome?", is_palindrome(text))

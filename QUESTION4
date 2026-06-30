@@ -1,14 +1,7 @@
-def to_uppercase(string):
-    result = ""
-    for char in string:
-        # Check if character is between 'a' and 'z'
-        if 'a' <= char <= 'z':
-            # Convert by shifting ASCII value by 32
-            result += chr(ord(char) - 32)
-        else:
-            result += char
-    return result
+def remove_spaces(string):
+    # Join characters together only if they are not spaces
+    return "".join(char for char in string if char != " ")
 
 # --- Example Usage ---
-text = "wipro"
-print(f"Uppercase of '{text}':", to_uppercase(text))
+text = "  Adobe   Paytm  "
+print("Without spaces:", remove_spaces(text))

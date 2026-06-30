@@ -1,19 +1,15 @@
-def count_vowels_consonants(string):
-    vowels = "aeiouAEIOU"
-    vowel_count = 0
-    consonant_count = 0
+def character_frequency(string):
+    frequency = {}
     
     for char in string:
-        # Check only alphabetic characters
-        if char.isalpha():
-            if char in vowels:
-                vowel_count += 1
-            else:
-                consonant_count += 1
-                
-    return vowel_count, consonant_count
+        # Increment count if character exists, otherwise initialize to 1
+        frequency[char] = frequency.get(char, 0) + 1
+        
+    return frequency
 
 # --- Example Usage ---
-text = "Infosys"
-v, c = count_vowels_consonants(text)
-print(f"In '{text}' -> Vowels: {v}, Consonants: {c}")
+text = "Microsoft"
+freq = character_frequency(text)
+print(f"Character frequencies in '{text}':")
+for char, count in freq.items():
+    print(f"'{char}': {count}")
